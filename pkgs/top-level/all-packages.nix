@@ -659,6 +659,8 @@ with pkgs;
 
   sea-orm-cli = callPackage ../development/tools/sea-orm-cli { };
 
+  tableplus = callPackage ../development/tools/tableplus { };
+
   r3ctl = qt5.callPackage ../tools/misc/r3ctl { };
 
   ptouch-print = callPackage ../misc/ptouch-print { };
