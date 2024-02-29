@@ -14,6 +14,15 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ cmake ];
   buildInputs = [ libpng zlib libtiff libxml2 openssl libiconv ];
+  outputs = ["out" "dev" "man"];
+
+  cmakeFlags = [
+    "-DBUILD_SHARED_LIBS:BOOL=ON"
+  ];
+
+  postInstall = ''
+    moveToOutput "lib/*.a" "$dev"
+  '';
 
   doCheck = true;
 
